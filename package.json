@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "start": "echo wip"
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node16.15.1 --bundle --outfile=dist/bundle.js",
+    "serve": "node dist/bundle.js",
+    "start": "npm run build && npm run serve"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "socket.io": "^4.5.1"
   },
   "devDependencies": {
     "esbuild": "^0.14.48"
